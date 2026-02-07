@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nakkeeran Annamalai - Staff Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio of Nakkeeran Annamalai, Staff Software Engineer in the Atlanta Metropolitan Area."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #111827;
+      --card: #020617;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.12);
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border-subtle: #1f2937;
+      --chip-bg: #020617;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #22c55e, #0ea5e9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 24px;
+      color: #0b1120;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.7);
+    }
+
+    .title-block h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 0.02em;
+    }
+
+    .title-block p {
+      margin: 4px 0 0;
+      color: var(--text-soft);
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(10px);
+      transition: all 0.18s ease-out;
+    }
+
+    nav a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 840px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    section {
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #020617 0, #020617 45%, #020617 100%);
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.95),
+        inset 0 0 0 1px rgba(148, 163, 184, 0.04);
+      padding: 18px 18px 16px;
+      margin-bottom: 16px;
+    }
+
+    section h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin: 0 0 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: var(--text-soft);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      margin-bottom: 10px;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+    }
+
+    .highlight {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-main);
+      margin: 0 0 12px;
+    }
+
+    .muted {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+
+    .experience-item {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed rgba(30, 64, 175, 0.4);
+    }
+
+    .experience-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .experience-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .experience-meta {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 2px;
+    }
+
+    .experience-desc {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 4px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--text-soft);
+    }
+
+    .col-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .list-compact {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .list-compact li + li {
+      margin-top: 4px;
+    }
+
+    a.link-inline {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a.link-inline:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 28px;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="avatar">NA</div>
+        <div class="title-block">
+          <h1>Nakkeeran Annamalai</h1>
+          <p>Staff Software Engineer · Atlanta Metropolitan Area</p>
+        </div>
+      </div>
+      <nav>
+        <a href="https://www.linkedin.com/in/naqiran" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a href="https://github.com/naqiran" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a href="mailto:naqiran@gmail.com">
+          Email
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Left column -->
+      <div>
+        <section>
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span>Building resilient pricing, search, and data platforms at scale</span>
+          </div>
+          <p class="highlight">
+            Staff-level engineer and architect with deep experience designing large-scale, event-driven systems for
+            e‑commerce, pricing, and search across Fortune 500 retailers and SaaS platforms.
+          </p>
+          <p class="muted">
+            I enjoy solving hard systems problems, modernizing legacy platforms, and enabling product teams through
+            pragmatic architecture and strong engineering practices.
+          </p>
+          <div class="chips">
+            <span class="chip">Event‑driven architectures</span>
+            <span class="chip">Real‑time pricing engines</span>
+            <span class="chip">Search & relevance</span>
+            <span class="chip">Big data pipelines</span>
+            <span class="chip">Cloud native</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Experience</h2>
+
+          <div class="experience-item">
+            <div class="experience-title">
+              <span>Staff Software Engineer · Chewy</span>
+              <span class="badge">Jan 2022 – Present · Atlanta, GA</span>
+            </div>
+            <div class="experience-meta">
+              OpenSearch, ElasticSearch, Apache Spark, Flink, Kafka, Delta Lake, Snowflake, Redshift, Java, Kotlin, Spring Boot
+            </div>
+            <p class="experience-desc">
+              Built a competitor price matching engine that compares prices across 45+ competitors and updates Chewy pricing in near real time, backed by streaming data pipelines and scalable search infrastructure.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-title">
+              <span>Staff Engineer · Zendesk</span>
+              <span class="badge">May 2021 – Dec 2021</span>
+            </div>
+            <div class="experience-meta">
+              Vert.x, Kafka, MySQL, gRPC, Kubernetes, Docker, Istio
+            </div>
+            <p class="experience-desc">
+              Modernized shopping experiences by building microservices, service‑to‑service communication patterns, and CI/CD pipelines using Spinnaker and Kubernetes.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-title">
+              <span>Senior Architect · Macy's</span>
+              <span class="badge">Jan 2020 – May 2021</span>
+            </div>
+            <div class="experience-meta">
+              GCP, Spanner, BigQuery, Bigtable, Dataflow, Airflow, Spring Boot
+            </div>
+            <p class="experience-desc">
+              Led enterprise pricing architecture, delivering real‑time services applying prices to 20M+ SKUs across 500+ stores, plus analytical engines for markdown and markup recommendations.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-title">
+              <span>Principal Engineer · Publicis Sapient</span>
+              <span class="badge">Aug 2015 – Jan 2020</span>
+            </div>
+            <div class="experience-meta">
+              AWS, Netflix OSS, Solr, Spring Boot, Spark, Cassandra
+            </div>
+            <p class="experience-desc">
+              Architected microservices, search, analytics, and merchandising platforms for retailers such as JCPenney and Ralph Lauren, including custom Solr plugins and streaming data pipelines.
+            </p>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-title">
+              <span>Earlier roles · IGATE, Navis, HCL</span>
+            </div>
+            <div class="experience-meta">
+              Technical Architect, Technical Lead, Software Engineer
+            </div>
+            <p class="experience-desc">
+              Built multi‑tenant e‑commerce platforms, content management integrations, and high‑performance C++ and Java systems, including static analysis tools and XML parsers.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right column -->
+      <div>
+        <section>
+          <h2>Technical Focus</h2>
+          <div class="col-title">Platforms & patterns</div>
+          <ul class="list-compact">
+            <li>Event‑driven systems, CQRS, streaming architectures</li>
+            <li>Real‑time pricing, catalog, and search platforms</li>
+            <li>Microservices, APIs, and service orchestration</li>
+          </ul>
+
+          <div class="col-title" style="margin-top: 10px;">Data & cloud</div>
+          <ul class="list-compact">
+            <li>Kafka, Spark, Flink, Dataflow, Airflow</li>
+            <li>Delta Lake, Snowflake, Redshift, BigQuery</li>
+            <li>AWS and GCP cloud‑native services</li>
+          </ul>
+
+          <div class="col-title" style="margin-top: 10px;">Languages & frameworks</div>
+          <ul class="list-compact">
+            <li>Java, Kotlin, Scala, Python, C++</li>
+            <li>Spring Boot, Vert.x, Reactor, RxJava</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <ul class="list-compact">
+            <li>Master of Engineering, Sri Venkateswara College of Engineering</li>
+            <li>Master of Business Administration, Anna University</li>
+            <li>Bachelor of Engineering, Dr MGR Educational and Research Institute</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Certifications</h2>
+          <ul class="list-compact">
+            <li>TOGAF 9 Certified</li>
+            <li>Hybris Certified Core Developer (v4 & v5)</li>
+            <li>Neo4j Certified Professional</li>
+            <li>PRINCE2 Foundation, ITIL Foundation</li>
+            <li>Sun Certified Java Programmer 5.0</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Links</h2>
+          <ul class="list-compact">
+            <li>
+              LinkedIn:
+              <a class="link-inline" href="https://www.linkedin.com/in/naqiran" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/naqiran
+              </a>
+            </li>
+            <li>
+              GitHub:
+              <a class="link-inline" href="https://github.com/naqiran" target="_blank" rel="noopener noreferrer">
+                github.com/naqiran
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Nakkeeran Annamalai · Built for GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
